@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procesador (CPU)</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="icon" type="image/png" href="c:\Users\Leonardo\Downloads\Leo_page-0002-removebg-preview.png">
+</head>
+<body background="https://th.bing.com/th/id/R.cba8fc93ea62e40ace04a3b94a461b5a?rik=0Y2DEURjnlyUng&riu=http%3a%2f%2fpm1.narvii.com%2f6493%2f95cc3c9915e2776ad09df612aa1fa024be2c3f20_00.jpg&ehk=KTsgRBOX1DxgZ82q%2fQSq5hD9i5ChbPtRmzGUeec%2f404%3d&risl=&pid=ImgRaw&r=0">
+  <header>
+    <h1>Procesador (CPU)</h1>
+  </header>
+
+  <main class="info">
+    <center><img src="https://th.bing.com/th/id/R.fc68d131b655fe7713e91e9b2441d2a0?rik=s%2bU2K2qRSRWgGA&pid=ImgRaw&r=0" weight= "200" height="300" alt="Procesador"></center>
+    <center><h1 style="color: rgb(255, 0, 0);">¿Qué son los procesadores?</h1></center>
+    <p>El procesador es el circuito electrónico que ejecuta instrucciones de programas: obtiene instrucciones de la memoria, las decodifica y las ejecuta (fetch → decode → execute). Para acelerar esto, las CPUs modernas usan técnicas como pipelining, ejecución superscalar (varias instrucciones por ciclo) y predicción de saltos.</p>
+    <center><h1 style="color: rgb(255, 0, 0);">Componentes y conceptos fundamentales</h1></center>
+    <ul>
+      <li>
+        <strong>Núcleos (cores): </strong> unidades independientes que ejecutan hilos/threads. Más núcleos = mejor paralelismo para tareas multihilo.
+      </li>
+      <li>
+        <strong>Hilos (threads) / Hyper-Threading / SMT: </strong> permite a un núcleo manejar más de un hilo lógico para aprovechar mejor recursos cuando hay latencias.
+      </li>
+      <li>
+        <strong>Frecuencia (clock speed): </strong> ciclos por segundo (GHz). No es el único indicador de rendimiento: importa también IPC (instrucciones por ciclo).
+      </li>
+      <li>
+        <strong>IPC (Instructions Per Cycle): </strong> cuánto trabajo realiza la CPU por ciclo; optimizaciones microarquitectónicas elevan IPC y suelen ser más importantes que GHz en muchos escenarios.
+      </li>
+      <li>
+        <strong>TDP / consumo y disipación térmica: </strong> determina diseño de refrigeración y consumo energético; afecta rendimiento sostenido (thermal throttling).
+      </li>
+    </ul>
+    <center><h1 style="color: rgb(255, 0, 0);">Memoria rápida dentro de la CPU: cachés (L1, L2, L3)</h1></center>
+    <ul>
+      <li>
+        <strong>L1: </strong>más rápida y pequeña, por núcleo (instrucciones y datos separados o combinados).
+      </li>
+      <li>
+        <strong>L2: </strong>más grande que L1, latencia intermedia; normalmente por núcleo.
+      </li>
+      <li>
+        <strong>L3 (o LLC): </strong>grande y compartida entre núcleos; mayor latencia pero evita accesos a RAM. La jerarquía reduce el coste promedio de acceso a memoria — acceder a caché es decenas de veces más rápido que a la RAM.
+      </li>
+    </ul>
+    <center><h1 style="color: rgb(255, 0, 0);">Arquitecturas e ISA: x86 (CISC) vs ARM (RISC) — diferencias clave</h1></center>
+    <ul>
+      <li>
+        <strong>x86 (Intel/AMD): </strong>ISA complejo (CISC), compatible con mucho software legado; históricamente optimizado para máximo rendimiento por núcleo.
+      </li>
+      <li>
+        <strong>ARM: </strong>ISA RISC, instrucciones más simples y eficientes energéticamente; ampliamente usada en móviles, ahora también en servidores y datacenters por su eficiencia.
+        <br>Ventaja práctica: ARM suele ofrecer mejor eficiencia energética; x86 ofrece compatibilidad y en muchos casos mayor rendimiento en cargas legacy. La línea entre ambas se estrecha con microarquitecturas y optimizaciones.
+      </li>
+    </ul>
+    <center><h1 style="color: rgb(255, 0, 0);">Diseño interno y técnicas de aceleración</h1></center>
+    <ul>
+      <li>
+        <strong>Pipelining:</strong> dividir ejecución en etapas para procesar varias instrucciones a la vez.
+      </li>
+      <li>
+        <strong>Superescalar y ejecución fuera de orden (OoO):</strong> permite ejecutar instrucciones en paralelo y no estrictamente en orden programado.
+      </li>
+      <li>
+        <strong>Branch prediction (predicción de saltos):</strong> reduce penalizaciones por saltos condicionales anticipando la dirección del flujo de control.
+      </li>
+    </ul>
+    <center><h1 style="color: rgb(255, 0, 0);">Fabricación: nodos, litografía y límites</h1></center>
+    <ul>
+      <li>
+        Los procesos (nm: 5nm, 3nm, etc.) indican densidad/transistor y eficiencia energética; nodos más pequeños suelen mejorar rendimiento por vatio, pero el beneficio real depende de diseño y costes. Con el estancamiento de la miniaturización, han surgido alternativas (chiplets, apilado 3D).
+      </li>
+    </ul>
+    <center><h1 style="color: rgb(255, 0, 0);">Chiplets y apilamiento 3D (tendencia actual)</h1></center>
+    <ul>
+      <li>
+        En lugar de un único "monolito", muchas compañías usan chiplets (múltiples dados especializados interconectados) para mejorar yield, flexibilidad y coste.
+      </li>
+      <li>
+        <strong>3D V-Cache (AMD)</strong> es un ejemplo de apilamiento vertical de caché para aumentar el caché L3 sin agrandar el dado base, mejorando rendimiento en ciertas cargas (juegos, cargas de datos). AMD y otros han publicado documentación técnica sobre chiplets y 3D stacking
+      </li>
+    </ul>
+    <center><h1 style="color: rgb(255, 0, 0);">Métricas de rendimiento para comparar CPUs</h1></center>
+    <ul>
+      <li>
+        <strong>Instrucciones por ciclo (IPC) — </strong>arquitectura/ microarquitectura
+      </li>
+      <li>
+        <strong>Frecuencia base / turbo — </strong>impacto en single-threaded.
+      </li>
+      <li>
+        <strong>Núcleos e hilos — </strong>impacto en multithread.
+      </li>
+      <li>
+        <strong>Tamaño y estructura de caché — </strong>afecta latencias y throughput.
+      </li>
+      <li>
+        <strong>Benchmarks reales (Cinebench, SPEC, Geekbench, juegos)</strong> son habitualmente los indicadores más útiles para comparar en escenarios reales.
+      </li>
+    </ul>
+    <center><h1 style="color: rgb(255, 0, 0);">Tendencias actuales y el futuro inmediato</h1></center>
+    <ul>
+      <li>
+        <strong>ARM en datacenters / nube: </strong>adopción creciente en infraestructuras cloud para cargas con necesidad de eficiencia energética; grandes hyperscalers ya despliegan instancias ARM. Esto está cambiando el panorama competitivo frente a x86.
+      </li>
+      <li>
+        <strong>Especialización y aceleradores: </strong>integración de bloques para IA (NPU / matrix engines), aceleradores en chip para inferencia/entrenamiento cada vez más comunes.
+      </li>
+      <li>
+        <strong>Diseño por chiplets y apilamiento 3D </strong>para sortear límites de escalado y reducir costes de fabricación.
+      </li>
+    </ul>
+    <center><h1 style="color: rgb(255, 0, 0);">Lecturas y recursos recomendados</h1></center>
+    <a href="https://en.wikipedia.org/wiki/Central_processing_unit?utm_source=chatgpt.com" class="ir a">← Wikipedia.org</a>
+    <br>
+      <a href="https://www.redhat.com/en/topics/linux/ARM-vs-x86?utm_source=chatgpt.com" class="ir a">← Red Hat</a>
+    <br>
+      <a href="https://www.pcgamer.com/processor-architecture-101-the-heart-of-your-pc/?utm_source=chatgpt.com" class="ir a">← PC Gamer</a>
+    <br>
+      <a href="https://www.amd.com/content/dam/amd/en/documents/solutions/technologies/chiplet-architecture-white-paper.pdf?utm_source=chatgpt.com" class="ir a">← AMD chiplet</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="Expotecnia esquema.html" class="volver">← Volver a la página principal</a>
+  </main>
+</body>
+</html>
